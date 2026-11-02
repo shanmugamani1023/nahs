@@ -26,11 +26,12 @@ env/
 *.safetensors
 *.gguf
 
-# Data files
-*.csv
+# Data files (exclude generated/sensitive, keep project data)
 *.xlsx
 *.json
 *.jsonl
+*.csv
+!nlp/products.csv
 
 # PDF & Word (generated files)
 *.pdf
