@@ -71,7 +71,16 @@ print(max_sum_k([1, 4, 2, 9, 7, 3], k=2))   # 16
 # Try solving below:
 
 def second_largest(nums):
-    pass  # write your solution here
+    largest = max(nums[0], nums[1])
+    second  = min(nums[0], nums[1])
+
+    for i in range(2, len(nums)):
+        if nums[i] > largest:
+            second, largest = largest, nums[i]
+        elif nums[i] > second and nums[i] != largest:
+            second = nums[i]
+
+    return second
 
 print("\n── Your Turn ──")
 print(second_largest([3, 1, 4, 1, 5, 9, 2, 6]))  # expected: 6
